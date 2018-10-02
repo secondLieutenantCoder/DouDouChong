@@ -7,8 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import "REFrostedViewController.h"
+//#import "DEMOMenuViewController.h"
+#import "DEMONavigationController.h"
+#import "DEMOSecondViewController.h"
+#import "DemoMenuController.h"
+#import "HomeController.h"
+// 地图
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <MAMapKit/MAMapKit.h>
+// 2
+#import "MainController.h"
+#import "WSUtil.h"
+#import <WXApi.h>     // 微信支付
+#import <AlipaySDK/AlipaySDK.h>  // 阿里支付
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -16,8 +30,111 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    /**
+     微信 key ： wxdb8f7870392258c3
+     secret  ： longchuangkeji05363210004LCKJYXJ
+     */
+    
     // Override point for customization after application launch.
+    
+    /*
+    HomeController * homeVC = [[HomeController alloc] init];
+    homeVC.view.backgroundColor = [UIColor redColor];
+    
+    DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:homeVC];
+  //  DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] initWithStyle:UITableViewStylePlain];
+    DemoMenuController * menuController = [[DemoMenuController alloc] init];
+    
+    REFrostedViewController * refVC = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    
+    refVC.direction = REFrostedViewControllerDirectionLeft;
+    
+    self.window.rootViewController = refVC;
+    */
+    // 请求用户数据
+    [self getUserInfo];
+     [self initGaoDe];
+    MainController * mainVC = [[MainController alloc] init];
+    
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    
+    self.window.rootViewController = nav;
+   
+    [WXApi registerApp:@"wxdb8f7870392258c3"];
+    
     return YES;
+}
+
+#pragma mark - 查询获取用户信息
+- (void) getUserInfo{
+
+    NSUserDefaults * uDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * tel = [uDefaults objectForKey:@"userTel"];
+   // NSString * tel = @"18363855638";
+    if (tel.length > 6) {
+        // 已登录用户，自动请求用户数据，实现自动登录
+        
+        NSDictionary * param = @{@"tel":tel};
+        
+        [WSUtil wsRequestWithName:@"get_user" andParam:param success:^(NSArray *dataArr) {
+            // 用户信息
+            NSLog(@"用户信息= %@",dataArr);
+            // 用户信息给到user
+            User * cU = [User getUser];
+            [cU setUserDataWithInfoData:dataArr[0]];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+        
+    }else{
+     // 新用户，尚未登录过，需到登录界面，验证手机登录
+    }
+    
+    
+}
+
+
+- (void) initGaoDe{
+    
+    ///========================== 高德地图 ==========================\\\
+    [AMapServices sharedServices].enableHTTPS = YES;
+    // 显示地图
+    [AMapServices sharedServices].apiKey =kMapKey;
+}
+-(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+
+    BOOL result = [WXApi handleOpenURL:url delegate:self];
+    
+    if (!result) {
+        if ([url.host isEqualToString:@"safepay"]) {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+            result = YES;
+        }
+    }
+    
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
+
+    BOOL result = [WXApi handleOpenURL:url delegate:self];
+    
+    if (!result) {
+        if ([url.host isEqualToString:@"safepay"]) {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+            result = YES;
+        }
+    }
+    
+    return result;
+//    return [WXApi handleOpenURL:url delegate:self];
 }
 
 

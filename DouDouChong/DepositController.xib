@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17A405" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DepositController">
+            <connections>
+                <outlet property="getDepositBtn" destination="Q3Z-gS-pzt" id="znZ-wv-eGr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_weizhang" translatesAutoresizingMaskIntoConstraints="NO" id="ize-LH-xmX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="fAY-qt-dY2"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保障中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fk-SM-lqQ">
+                    <rect key="frame" x="157.5" y="250" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="TlU-js-qED"/>
+                        <constraint firstAttribute="height" constant="20" id="g96-nz-QSQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-Et-Yby">
+                    <rect key="frame" x="157.5" y="275" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="2ML-Ur-jEG"/>
+                        <constraint firstAttribute="width" constant="60" id="Jp9-KY-esF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Z-gS-pzt">
+                    <rect key="frame" x="30" y="340" width="315" height="30"/>
+                    <color key="backgroundColor" red="0.12328858199999999" green="0.71800113340000005" blue="0.066455534960000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jxV-V0-gkg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="申请退回">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tuihuiAction:" destination="-1" eventType="touchUpInside" id="Ipz-8d-iND"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还车15个工作日后可退回" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLY-pM-urT">
+                    <rect key="frame" x="87.5" y="300" width="200" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="HNz-xO-aWl"/>
+                        <constraint firstAttribute="width" constant="200" id="xbH-XK-szl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2fk-SM-lqQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7I1-xe-KeN"/>
+                <constraint firstItem="Q3Z-gS-pzt" firstAttribute="top" secondItem="SLY-pM-urT" secondAttribute="bottom" constant="20" id="CvW-QZ-wy7"/>
+                <constraint firstItem="MM9-Et-Yby" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HQG-VR-NEd"/>
+                <constraint firstItem="SLY-pM-urT" firstAttribute="top" secondItem="MM9-Et-Yby" secondAttribute="bottom" constant="5" id="crF-Qs-aeY"/>
+                <constraint firstItem="ize-LH-xmX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="giK-gd-JsR"/>
+                <constraint firstItem="MM9-Et-Yby" firstAttribute="top" secondItem="2fk-SM-lqQ" secondAttribute="bottom" constant="5" id="h7B-oo-3hg"/>
+                <constraint firstItem="SLY-pM-urT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mJW-Tz-Zqw"/>
+                <constraint firstAttribute="trailing" secondItem="ize-LH-xmX" secondAttribute="trailing" id="n6e-SI-vQC"/>
+                <constraint firstItem="2fk-SM-lqQ" firstAttribute="top" secondItem="ize-LH-xmX" secondAttribute="bottom" id="vOR-me-TuU"/>
+                <constraint firstAttribute="trailing" secondItem="Q3Z-gS-pzt" secondAttribute="trailing" constant="30" id="vZ7-m6-N6A"/>
+                <constraint firstItem="ize-LH-xmX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yHW-aA-ob2"/>
+                <constraint firstItem="Q3Z-gS-pzt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="zHj-SB-2Cs"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_weizhang" width="1080" height="615"/>
+    </resources>
+</document>
