@@ -10,8 +10,8 @@
 		4F180B3120C8B44D00496C11 /* PopCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F180B3020C8B44D00496C11 /* PopCenterView.m */; };
 		4F18C51C219922A7000169BC /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F18C517219922A7000169BC /* MBProgressHUD+Add.m */; };
 		4F18C51D219922A7000169BC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F18C519219922A7000169BC /* MBProgressHUD.m */; };
-		4F18C51E219922A7000169BC /* ShowMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F18C51B219922A7000169BC /* ShowMessage.m */; };
 		4F18C52221992380000169BC /* pinyin 2.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F18C52121992380000169BC /* pinyin 2.c */; };
+		4F18C52521992CDD000169BC /* ShowMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F18C52421992CDD000169BC /* ShowMessage.m */; };
 		4F256A6420EB2C8D000D27FE /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F256A5F20EB2C8D000D27FE /* WXApiRequestHandler.m */; };
 		4F256A6520EB2C8D000D27FE /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F256A6120EB2C8D000D27FE /* WXApiResponseHandler.m */; };
 		4F256A6620EB2C8D000D27FE /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F256A6320EB2C8D000D27FE /* WXApiManager.m */; };
@@ -179,12 +179,12 @@
 		4F180B3020C8B44D00496C11 /* PopCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopCenterView.m; sourceTree = "<group>"; };
 		4F18C516219922A7000169BC /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		4F18C517219922A7000169BC /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
-		4F18C518219922A7000169BC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		4F18C519219922A7000169BC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4F18C51A219922A7000169BC /* ShowMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMessage.h; sourceTree = "<group>"; };
-		4F18C51B219922A7000169BC /* ShowMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMessage.m; sourceTree = "<group>"; };
 		4F18C52021992380000169BC /* pinyin 2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "pinyin 2.h"; sourceTree = "<group>"; };
 		4F18C52121992380000169BC /* pinyin 2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "pinyin 2.c"; sourceTree = "<group>"; };
+		4F18C52321992CCF000169BC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4F18C52421992CDD000169BC /* ShowMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMessage.m; sourceTree = "<group>"; };
 		4F256A5E20EB2C8D000D27FE /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
 		4F256A5F20EB2C8D000D27FE /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
 		4F256A6020EB2C8D000D27FE /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
@@ -478,10 +478,10 @@
 			children = (
 				4F18C516219922A7000169BC /* MBProgressHUD+Add.h */,
 				4F18C517219922A7000169BC /* MBProgressHUD+Add.m */,
-				4F18C518219922A7000169BC /* MBProgressHUD.h */,
+				4F18C52321992CCF000169BC /* MBProgressHUD.h */,
 				4F18C519219922A7000169BC /* MBProgressHUD.m */,
 				4F18C51A219922A7000169BC /* ShowMessage.h */,
-				4F18C51B219922A7000169BC /* ShowMessage.m */,
+				4F18C52421992CDD000169BC /* ShowMessage.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -1410,6 +1410,7 @@
 				4F90EB842046815200B39D4B /* DEMONavigationController.m in Sources */,
 				4F90EB7B20467F8E00B39D4B /* UIImage+REFrostedViewController.m in Sources */,
 				4F53A406204E4589009D7BB0 /* MANaviAnnotation.m in Sources */,
+				4F18C52521992CDD000169BC /* ShowMessage.m in Sources */,
 				4FA8EAD420DE37BD00F3ADFB /* HelpController.m in Sources */,
 				4F53A408204E4589009D7BB0 /* MANaviRoute.m in Sources */,
 				4F87DEA720BFD94C00007752 /* ChongZhiController.m in Sources */,
@@ -1422,7 +1423,6 @@
 				4FD23F1A20D88D5A0083DD11 /* SGScanningQRCodeView.m in Sources */,
 				4F180B3120C8B44D00496C11 /* PopCenterView.m in Sources */,
 				4F6E8D7D20B17C97009A4F2E /* PickedCarView.m in Sources */,
-				4F18C51E219922A7000169BC /* ShowMessage.m in Sources */,
 				4FE94C1420B541DF001E435F /* UIView+IQKeyboardToolbar.m in Sources */,
 				4F90EB7A20467F8E00B39D4B /* REFrostedViewController.m in Sources */,
 				4FE94C1120B541DF001E435F /* IQToolbar.m in Sources */,
